@@ -90,6 +90,7 @@ public class RentAByke {
         return rentCost;
     }
     
+    /*Método que calcula la diferencia entre dos Objetos de la clase Date*/
     public static Date calculatesRentTime(Date rentStarts, Date rentEnds){
         
         int days = (int)(rentEnds.getDay()-rentStarts.getDay());
