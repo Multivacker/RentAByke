@@ -113,7 +113,7 @@ public class RentAByke {
         
         System.out.println("Tiempo de renta: " + days + " dias, " + hours + " horas, " + minutes + " minutos y " + timeDiference + " segundos.");
         
-        return rentTime;
+        return rentTime = new Date(118, 5, days, hours, minutes, timeDiference);
     }
     
     
