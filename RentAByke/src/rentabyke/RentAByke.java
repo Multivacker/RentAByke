@@ -93,13 +93,27 @@ public class RentAByke {
     /*Método que calcula la diferencia entre dos Objetos de la clase Date*/
     public static Date calculatesRentTime(Date rentStarts, Date rentEnds){
         
-        int days = (int)(rentEnds.getDay()-rentStarts.getDay());
+        int timeDiference=(int)((rentEnds.getTime()-rentStarts.getTime())/1000);
+ 
+        int days = 0;
+        int hours = 0;
+        int minutes = 0;
+        if(timeDiference>86400) {
+            days = (int)Math.floor(timeDiference/86400);
+            timeDiference=timeDiference-(days*86400);
+        }
+        if(timeDiference>3600) {
+            hours = (int)Math.floor(timeDiference/3600);
+            timeDiference = timeDiference-(hours*3600);
+        }
+        if(timeDiference>60) {
+            minutes = (int)Math.floor(timeDiference/60);
+            timeDiference = timeDiference-(minutes*60);
+        }
         
-        int hours = (int)(rentEnds.getHours()-rentStarts.getHours());
+        System.out.println("Tiempo de renta: " + days + " dias, " + hours + " horas, " + minutes + " minutos y " + timeDiference + " segundos.");
         
-        int minutes = (int)(rentEnds.getMinutes()-rentStarts.getMinutes());
-        
-        return rentTime2;
+        return rentTime;
     }
     
     
