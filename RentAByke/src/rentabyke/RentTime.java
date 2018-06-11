@@ -11,7 +11,7 @@ package rentabyke;
  * 
  */
 public class RentTime {
-        
+
         private int seconds = 0;
         private int minutes = 0;
         private int hours = 0;
@@ -66,4 +66,11 @@ public class RentTime {
     public void setWeeks(int weeks) {
         this.weeks = weeks;
     }
+    
+    @Override
+    public String toString() {
+        return "RentTime{" + "seconds = " + seconds + ", minutes = " + minutes + 
+               ", hours = " + hours + ", days = " + days + ", weeks = " + weeks + '}';
+    }
+        
     }
