@@ -14,6 +14,7 @@ public class Bike {
 
     public Bike(long ID, String brand, String model, int wheelSize, boolean fondable) {
         
+        this.ID = ID;
         this.brand = brand;
         this.model = model;
         this.wheelSize = wheelSize;
@@ -62,7 +63,7 @@ public class Bike {
                 model + ", wheelSize = " + wheelSize + ", fondable = " + fondable + '}';
     }
     
-private final long ID = 0; 
+private long ID = 0; 
 private String brand = "";
 private String model = "";
 private int wheelSize = 0;
