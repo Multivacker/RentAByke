@@ -12,7 +12,21 @@ package rentabyke;
  */
 public class Client {
     
-    public Client() {
+    public Client(long ID, String Name, String LastName, int age, String UserName, String ClientPass, String mail, String homeAdress) {
+        
+        this.ID = ID;
+        this.Name = Name;
+        this.LastName = LastName;
+        this.age = age;
+        this.UserName = UserName;
+        this.ClientPass = ClientPass;
+        this.mail = mail;
+        this.homeAdress = homeAdress;
+        
+    }
+    
+    public long getID() {
+        return ID;
     }
 
     public String getName() {
@@ -39,12 +53,12 @@ public class Client {
         this.age = age;
     }
 
-    public String getClientName() {
-        return ClientName;
+    public String getUserName() {
+        return UserName;
     }
 
-    public void setClientName(String UserName) {
-        this.ClientName = UserName;
+    public void setUserName(String UserName) {
+        this.UserName = UserName;
     }
 
     public String getClientPass() {
@@ -64,28 +78,30 @@ public class Client {
     }
     
     public String getHome() {
-        return home;
+        return homeAdress;
     }
 
     public void setHome(String home) {
-        this.home = home;
+        this.homeAdress = home;
     }
 
     @Override
     public String toString() {
         return "Client{" + "ID = " + ID + ", Name = " + Name + ", LastName = " + 
-                LastName + ", age = " + age + ", ClientName = " + ClientName + 
+                LastName + ", age = " + age + ", UserName = " + UserName + 
                 ", ClientPass = " + ClientPass + ", mail = " + mail + ", home = " 
-                + home + '}';
+                + homeAdress + '}';
     }
     
-    private final long ID = 0;
-    private String Name = "";
-    private String LastName = "";
-    private int age = 0;
-    private String ClientName = "";
-    private String ClientPass = "";
-    private String mail= "";
-    private String home = "";
+    private long ID;
+    private String Name;
+    private String LastName;
+    private int age;
+    private String UserName;
+    private String ClientPass;
+    private String mail;
+    private String homeAdress;
+
+}
 
 }
