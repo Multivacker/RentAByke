@@ -5,18 +5,14 @@
  */
 package rentabyke;
 
+import java.util.Date;
+
 /**
  *
  * @author Nahuel E Correa
  * 
  */
 public class RentTime {
-
-        private int seconds = 0;
-        private int minutes = 0;
-        private int hours = 0;
-        private int days = 0;
-        private int weeks = 0;
 
     public RentTime(int weeks, int days, int hours, int minutes, int seconds) {
         
@@ -67,10 +63,46 @@ public class RentTime {
         this.weeks = weeks;
     }
     
+    /*Método que calcula la diferencia entre dos Objetos de la clase Date*/
+    public static RentTime calculatesRentTime(Date rentStarts, Date rentEnds){
+        
+        int seconds=(int)((rentEnds.getTime()-rentStarts.getTime())/1000);
+        
+        int weeks = 0;
+        int days = 0;
+        int hours = 0;
+        int minutes = 0;
+        
+        if(seconds>604800) {
+            weeks = (int)Math.floor(seconds/604800);
+            seconds=seconds-(days*604800);
+        }
+        if(seconds>86400) {
+            days = (int)Math.floor(seconds/86400);
+            seconds=seconds-(days*86400);
+        }
+        if(seconds>3600) {
+            hours = (int)Math.floor(seconds/3600);
+            seconds = seconds-(hours*3600);
+        }
+        if(seconds>60) {
+            minutes = (int)Math.floor(seconds/60);
+            seconds = seconds-(minutes*60);
+        }
+        
+        RentTime rentTime = new RentTime(weeks, days, hours, minutes, seconds);
+        
+        return rentTime;
+    }
+
     @Override
     public String toString() {
-        return "RentTime{" + "seconds = " + seconds + ", minutes = " + minutes + 
-               ", hours = " + hours + ", days = " + days + ", weeks = " + weeks + '}';
+        return "weeks:" + weeks + " days:" + days + " hours:" + hours + " minutes:" + minutes;
     }
+        private int seconds;
+        private int minutes;
+        private int hours;
+        private int days;
+        private int weeks;
         
     }
